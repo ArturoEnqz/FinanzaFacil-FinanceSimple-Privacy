@@ -5,36 +5,139 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>FinanzaFácil - Política de privacidad</title>
   <style>
-    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; line-height: 1.55; max-width: 760px; margin: 0 auto; padding: 32px 20px; color: #1c1c1e; }
+    body { 
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; 
+      line-height: 1.55; 
+      max-width: 760px; 
+      margin: 0 auto; 
+      padding: 32px 20px; 
+      color: #1c1c1e; 
+    }
     h1 { font-size: 32px; line-height: 1.15; margin-bottom: 4px; }
     h2 { font-size: 20px; margin-top: 28px; }
-    .updated { color: #6e6e73; font-weight: 600; }
+    .updated { color: #6e6e73; font-weight: 600; margin-bottom: 32px; }
+    
+    /* Estilos del selector de idioma */
+    .header-controls {
+      display: flex;
+      justify-content: flex-end;
+      margin-bottom: 20px;
+    }
+    select {
+      padding: 8px 12px;
+      font-size: 14px;
+      border-radius: 6px;
+      border: 1px solid #d1d1d6;
+      background-color: #f2f2f7;
+      color: #1c1c1e;
+      cursor: pointer;
+    }
+    select:focus {
+      outline: none;
+      border-color: #007aff;
+    }
+
+    /* Ocultar contenido por defecto para manejarlo con JS */
+    .lang-content { display: none; }
   </style>
 </head>
 <body>
-  <h1>Política de privacidad de FinanzaFácil</h1>
-  <p class="updated">Actualizada el 27 de abril de 2026</p>
-  <p>FinanzaFácil es una herramienta local para registrar ingresos, gastos, pagos, deudas, presupuestos y ahorros. No ofrece servicios bancarios, préstamos, inversión, trading ni asesoría financiera.</p>
 
-  <h2>Datos que guardas</h2>
-  <p>La app guarda en tu dispositivo los datos que ingresas voluntariamente, como montos, nombres de bancos o tarjetas, personas, notas, fechas, categorías y presupuestos.</p>
+  <div class="header-controls">
+    <select id="lang-selector">
+      <option value="es">Español</option>
+      <option value="en">English</option>
+    </select>
+  </div>
 
-  <h2>Recolección y uso</h2>
-  <p>FinanzaFácil no crea cuentas, no tiene servidor propio, no muestra anuncios, no usa analítica y no transmite tus datos financieros a internet. La información solo se usa para mostrarte cálculos y vistas dentro de la app.</p>
+  <div id="content-es" class="lang-content">
+    <h1>Política de privacidad de FinanzaFácil</h1>
+    <p class="updated">Actualizada el 27 de abril de 2026</p>
+    <p>FinanzaFácil es una herramienta local para registrar ingresos, gastos, pagos, deudas, presupuestos y ahorros. No ofrece servicios bancarios, préstamos, inversión, trading ni asesoría financiera.</p>
 
-  <h2>Respaldos y archivos</h2>
-  <p>Si exportas un respaldo o compartes una imagen de deudas, tú eliges dónde guardar o enviar ese archivo mediante las opciones del sistema. Esos archivos pueden contener la información que registraste.</p>
+    <h2>Datos que guardas</h2>
+    <p>La app guarda en tu dispositivo los datos que ingresas voluntariamente, como montos, nombres de bancos o tarjetas, personas, notas, fechas, categorías y presupuestos.</p>
 
-  <h2>Terceros</h2>
-  <p>La app usa librerías de Expo y React Native para funcionar en iOS. No se integran redes de anuncios, proveedores de analítica ni servicios externos que reciban tus datos desde la app.</p>
+    <h2>Recolección y uso</h2>
+    <p>FinanzaFácil no crea cuentas, no tiene servidor propio, no muestra anuncios, no usa analítica y no transmite tus datos financieros a internet. La información solo se usa para mostrarte cálculos y vistas dentro de la app.</p>
 
-  <h2>Retención y eliminación</h2>
-  <p>Los datos permanecen en el almacenamiento local del dispositivo hasta que los edites, los borres o desinstales la app. También puedes borrar todo desde Configuración &gt; Borrar todos los datos.</p>
+    <h2>Respaldos y archivos</h2>
+    <p>Si exportas un respaldo o compartes una imagen de deudas, tú eliges dónde guardar o enviar ese archivo mediante las opciones del sistema. Esos archivos pueden contener la información que registraste.</p>
 
-  <h2>Permisos y rastreo</h2>
-  <p>La app no solicita permisos sensibles como ubicación, cámara, contactos o fotos para sus funciones principales, y no usa tus datos para rastreo publicitario.</p>
+    <h2>Terceros</h2>
+    <p>La app usa librerías de Expo y React Native para funcionar en iOS. No se integran redes de anuncios, proveedores de analítica ni servicios externos que reciban tus datos desde la app.</p>
 
-  <h2>Contacto</h2>
-  <p>Para soporte o preguntas de privacidad, usa el enlace de soporte publicado en la ficha de App Store.</p>
+    <h2>Retención y eliminación</h2>
+    <p>Los datos permanecen en el almacenamiento local del dispositivo hasta que los edites, los borres o desinstales la app. También puedes borrar todo desde Configuración &gt; Borrar todos los datos.</p>
+
+    <h2>Permisos y rastreo</h2>
+    <p>La app no solicita permisos sensibles como ubicación, cámara, contactos o fotos para sus funciones principales, y no usa tus datos para rastreo publicitario.</p>
+
+    <h2>Contacto</h2>
+    <p>Para soporte o preguntas de privacidad, usa el enlace de soporte publicado en la ficha de App Store.</p>
+  </div>
+
+  <div id="content-en" class="lang-content">
+    <h1>FinanzaFácil Privacy Policy</h1>
+    <p class="updated">Updated on April 27, 2026</p>
+    <p>FinanzaFácil is a local tool to record income, expenses, payments, debts, budgets, and savings. It does not offer banking services, loans, investment, trading, or financial advice.</p>
+
+    <h2>Data you save</h2>
+    <p>The app saves on your device the data you voluntarily enter, such as amounts, names of banks or cards, people, notes, dates, categories, and budgets.</p>
+
+    <h2>Collection and use</h2>
+    <p>FinanzaFácil does not create accounts, has no server of its own, shows no ads, uses no analytics, and does not transmit your financial data to the internet. The information is only used to show you calculations and views within the app.</p>
+
+    <h2>Backups and files</h2>
+    <p>If you export a backup or share an image of debts, you choose where to save or send that file using the system options. Those files may contain the information you recorded.</p>
+
+    <h2>Third parties</h2>
+    <p>The app uses Expo and React Native libraries to run on iOS. Ad networks, analytics providers, or external services that receive your data from the app are not integrated.</p>
+
+    <h2>Retention and deletion</h2>
+    <p>Data remains in the device's local storage until you edit it, delete it, or uninstall the app. You can also delete everything from Settings &gt; Delete all data.</p>
+
+    <h2>Permissions and tracking</h2>
+    <p>The app does not request sensitive permissions such as location, camera, contacts, or photos for its core functions, and does not use your data for advertising tracking.</p>
+
+    <h2>Contact</h2>
+    <p>For support or privacy questions, use the support link published on the App Store listing.</p>
+  </div>
+
+  <script>
+    // Títulos de la pestaña según el idioma
+    const pageTitles = {
+      es: "FinanzaFácil - Política de privacidad",
+      en: "FinanzaFácil - Privacy Policy"
+    };
+
+    function setLanguage(lang) {
+      // Usar español si el idioma empieza con 'es', de lo contrario usar inglés como predeterminado
+      const selectedLang = lang.toLowerCase().startsWith('es') ? 'es' : 'en';
+
+      // 1. Actualizar el atributo lang del HTML y el título de la página
+      document.documentElement.lang = selectedLang;
+      document.title = pageTitles[selectedLang];
+
+      // 2. Actualizar el valor del selector (dropdown)
+      document.getElementById('lang-selector').value = selectedLang;
+
+      // 3. Ocultar todos los contenidos y mostrar solo el seleccionado
+      document.querySelectorAll('.lang-content').forEach(el => el.style.display = 'none');
+      document.getElementById('content-' + selectedLang).style.display = 'block';
+    }
+
+    // Al cargar la página, detectar el idioma del sistema
+    window.onload = () => {
+      const userLang = navigator.language || navigator.userLanguage;
+      setLanguage(userLang);
+    };
+
+    // Al cambiar el selector manualmente, actualizar la vista
+    document.getElementById('lang-selector').addEventListener('change', (event) => {
+      setLanguage(event.target.value);
+    });
+  </script>
+
 </body>
 </html>
