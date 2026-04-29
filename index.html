@@ -17,7 +17,6 @@
     h2 { font-size: 20px; margin-top: 28px; }
     .updated { color: #6e6e73; font-weight: 600; margin-bottom: 32px; }
     
-    /* Estilos del selector de idioma */
     .header-controls {
       display: flex;
       justify-content: flex-end;
@@ -32,12 +31,8 @@
       color: #1c1c1e;
       cursor: pointer;
     }
-    select:focus {
-      outline: none;
-      border-color: #007aff;
-    }
+    select:focus { outline: none; border-color: #007aff; }
 
-    /* Ocultar contenido por defecto para manejarlo con JS */
     .lang-content { display: none; }
   </style>
 </head>
@@ -78,15 +73,15 @@
   </div>
 
   <div id="content-en" class="lang-content">
-    <h1>FinanzaFácil Privacy Policy</h1>
+    <h1>FinanceSimple Privacy Policy</h1>
     <p class="updated">Updated on April 27, 2026</p>
-    <p>FinanzaFácil is a local tool to record income, expenses, payments, debts, budgets, and savings. It does not offer banking services, loans, investment, trading, or financial advice.</p>
+    <p>FinanceSimple is a local tool to record income, expenses, payments, debts, budgets, and savings. It does not offer banking services, loans, investment, trading, or financial advice.</p>
 
     <h2>Data you save</h2>
     <p>The app saves on your device the data you voluntarily enter, such as amounts, names of banks or cards, people, notes, dates, categories, and budgets.</p>
 
     <h2>Collection and use</h2>
-    <p>FinanzaFácil does not create accounts, has no server of its own, shows no ads, uses no analytics, and does not transmit your financial data to the internet. The information is only used to show you calculations and views within the app.</p>
+    <p>FinanceSimple does not create accounts, has no server of its own, shows no ads, uses no analytics, and does not transmit your financial data to the internet. The information is only used to show you calculations and views within the app.</p>
 
     <h2>Backups and files</h2>
     <p>If you export a backup or share an image of debts, you choose where to save or send that file using the system options. Those files may contain the information you recorded.</p>
@@ -105,37 +100,35 @@
   </div>
 
   <script>
-    // Títulos de la pestaña según el idioma
-    const pageTitles = {
-      es: "FinanzaFácil - Política de privacidad",
-      en: "FinanzaFácil - Privacy Policy"
+    const translations = {
+      es: { title: "FinanzaFácil - Política de privacidad" },
+      en: { title: "FinanceSimple - Privacy Policy" }
     };
 
     function setLanguage(lang) {
-      // Usar español si el idioma empieza con 'es', de lo contrario usar inglés como predeterminado
       const selectedLang = lang.toLowerCase().startsWith('es') ? 'es' : 'en';
 
-      // 1. Actualizar el atributo lang del HTML y el título de la página
+      // Actualizar meta tags e idioma del documento
       document.documentElement.lang = selectedLang;
-      document.title = pageTitles[selectedLang];
+      document.title = translations[selectedLang].title;
 
-      // 2. Actualizar el valor del selector (dropdown)
+      // Actualizar el selector visual
       document.getElementById('lang-selector').value = selectedLang;
 
-      // 3. Ocultar todos los contenidos y mostrar solo el seleccionado
+      // Intercambiar visibilidad de contenidos
       document.querySelectorAll('.lang-content').forEach(el => el.style.display = 'none');
       document.getElementById('content-' + selectedLang).style.display = 'block';
     }
 
-    // Al cargar la página, detectar el idioma del sistema
+    // Detección automática al cargar
     window.onload = () => {
-      const userLang = navigator.language || navigator.userLanguage;
-      setLanguage(userLang);
+      const systemLang = navigator.language || navigator.userLanguage;
+      setLanguage(systemLang);
     };
 
-    // Al cambiar el selector manualmente, actualizar la vista
-    document.getElementById('lang-selector').addEventListener('change', (event) => {
-      setLanguage(event.target.value);
+    // Cambio manual
+    document.getElementById('lang-selector').addEventListener('change', (e) => {
+      setLanguage(e.target.value);
     });
   </script>
 
